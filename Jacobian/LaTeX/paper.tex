@@ -45,35 +45,39 @@ All lemmas are formally verified in Agda $2.9.0$-\texttt{4f8feee-dirty}
 standard library $2.4$. The formalization consists of $16$ modules,
 $\sim$10,500 lines, and $0$ \texttt{postulate} declarations.
 
-The Alp\"{o}ge (2026) counterexample to the classical Jacobian conjecture
-in $\C^3$ does not apply to our setting, because the three working conditions
-of our framework (geometric closure, algebraic conjugation, descriptive completeness)
-are not satisfied on $\C^3$.
+Our result shows that the Alp\"{o}ge (2026) counterexample is valid only at the
+local level: it satisfies the pointwise Jacobian condition but fails all three
+global conditions---geometric closure, algebraic conjugation, and descriptive
+completeness. The counterexample demonstrates the insufficiency of the local
+criterion; it does not refute the global determinant criterion on a finite set.
 \end{abstract}
 
 % ============================================================
 \section{Introduction}
 % ============================================================
 
-The classical Jacobian conjecture \cite{keller} asserts that a polynomial map
-$F:\C^n\to\C^n$ with constant non-zero Jacobian determinant is globally invertible.
-In July 2026, Alp\"{o}ge \cite{alpoge} constructed a counterexample in $\C^3$:
-a degree-$7$ map with $\Det(\Jac)\equiv-2$ but three distinct inputs collapse to
-the same output. Tao \cite{tao} analyzed the geometric mechanism: introducing
-$t=y+1/x$ yields a cubic $P(T)=cT^3-2T^2+bT-2a$, which degenerates at $c=0$,
-allowing the third root to escape to projective infinity.
+The classical Jacobian conjecture \cite{keller} is often framed as a question
+about whether local invertibility implies global invertibility for polynomial
+maps. Bass, Connell, and Wright \cite{bcw} proved a structural reduction: the
+conjecture is equivalent to the statement that $J(H)$ is a nilpotent matrix
+for cubic homogeneous maps $F=X-H$. This transforms the differential condition
+$\det J(F)=c\neq0$ into a purely algebraic matrix condition.
 
-The Alp\"{o}ge counterexample relies on two properties of $\C^3$:
-non-compactness (permitting escape to infinity) and characteristic $0$
-(where the Frobenius map $\Frob(x)=x^3$ is invisible as a field automorphism).
-The construction builds on a line of work in the Soviet school of
-complex analysis: Vitushkin's rational maps on punctured planes exhibiting
-local injectivity with global collapse, and Pinchuk's \cite{pinchuk} 1994
-counterexample to the strong real Jacobian conjecture on $\R^2$.
+In July 2026, Alp\"{o}ge \cite{alpoge} constructed a counterexample in $\C^3$,
+refuting the conjecture for $n\geq3$. Tao \cite{tao} analyzed the geometric
+mechanism: the map admits a $3$-to-$1$ collapse where the third root escapes
+to projective infinity at the degenerate point $c=0$.
 
-This note considers a different setting. We work on a finite set $S$,
-and replace the pointwise Jacobian with the {\em function table matrix} $\MF$.
-The main result is that $\Det(\MF)\neq 0$ is equivalent to $F$ being bijective.
+The construction builds on the Soviet school (Vitushkin's rational maps,
+Pinchuk's \cite{pinchuk} 1994 $\R^2$ counterexample). The common thread is
+that the derivative matrix $J(F)$ on $\C^3$ cannot detect the global collapse
+because the space is non-compact and the Frobenius map $\Frob(x)=x^3$ is
+invisible in characteristic $0$.
+
+Following the matrix-centric direction opened by BCW, this note replaces the
+derivative matrix $J(F)$ with the {\em function table matrix} $\MF$---constructed
+directly from the values of $F$ on a finite set. The main result is that
+$\Det(\MF)\neq 0$ is equivalent to $F$ being bijective.
 
 % ============================================================
 \section{Definitions}
@@ -211,6 +215,7 @@ working conditions.
 
 \begin{thebibliography}{99}
 \bibitem{keller} O.-H. Keller, \textit{Ganze Cremona-Transformationen}, Monatsh. Math. Phys. 47 (1939), 299--306.
+\bibitem{bcw} H. Bass, E. Connell, D. Wright, \textit{The Jacobian Conjecture: Reduction of Degree and Formal Expansion of the Inverse}, Bull. AMS 7 (1982), 287--330.
 \bibitem{alpoge} L. Alp\"{o}ge, \textit{A Counterexample to the Jacobian Conjecture in Dimension 3} (2026).
 \bibitem{tao} T. Tao, \textit{A Digestion of the Jacobian Conjecture Counterexample} (2026).
 \bibitem{pinchuk} S. Pinchuk, \textit{A Counterexample to the Strong Real Jacobian Conjecture}, Math. Z. 217 (1994), 1--4.
