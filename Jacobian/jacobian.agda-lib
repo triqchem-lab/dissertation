@@ -1,0 +1,3 @@
+name: jacobian-standalone
+include: .
+flags: --rewriting --guardedness
