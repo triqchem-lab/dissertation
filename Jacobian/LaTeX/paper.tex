@@ -121,6 +121,18 @@ distinct (determinant property for function table matrices).
 \item On a finite set, injectivity iff surjectivity (pigeonhole principle).
 \end{enumerate}
 Hence $\Det(\MF)\neq 0$ iff $F$ is bijective.
+
+The proof depends only on the finiteness of $S$, not on any algebraic
+structure of the underlying set. The result therefore applies equally to
+finite subsets of affine varieties, discrete tori, or any finite
+combinatorial domain.
+
+For comparison, the pointwise Jacobian criteria---the formal derivative
+and the discrete difference operator---are known to be insufficient on
+$\GF(3)^2$ and $\GF(9)^2$, where counterexamples with constant non-zero
+local Jacobians but non-bijective maps have been formally verified
+(\texttt{jac\_GF3.agda}, \texttt{jac\_FrobeniusBlind.agda}). This
+motivates the need for the global matrix criterion $\Det(\MF)\neq 0$.
 \end{proof}
 
 The equivalence ``$\Det(\MF)\neq 0 \iff$ no zero row and columns distinct''
